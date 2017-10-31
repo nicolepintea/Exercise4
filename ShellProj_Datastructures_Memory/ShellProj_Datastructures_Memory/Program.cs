@@ -121,7 +121,7 @@ namespace ShellProj_Datastructures_Memory
             bool loopCase = true;
             while (loopCase)
             {
-                Console.Clear();
+                
                 Console.WriteLine("There is " + theList.Count + " items in que");
                 string input = Console.ReadLine();
                 char nav = input[0];
@@ -129,11 +129,13 @@ namespace ShellProj_Datastructures_Memory
                 switch (nav)
                 {
 
-                    case '1':
+                    case '+':
                         theList.Enqueue(value);
+                        Console.WriteLine("Next in que is: " + theList.Peek());
                         break;
-                    case '2':
+                    case '-':
                         theList.Dequeue();
+                        Console.WriteLine("Next in que is: " + theList.Peek());
                         break;
                     case '3':
                         break;

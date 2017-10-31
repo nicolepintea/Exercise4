@@ -76,13 +76,36 @@ namespace ShellProj_Datastructures_Memory
              * Below you can see some inspirational code to begin working.
             */
 
-            //List<string> theList = new List<string>();
-            //string input = Console.ReadLine();
-            //char nav = input[0];
-            //string value = input.substring(1);
+            List<string> theList = new List<string>();
+            bool loopCase = true;
+            while (loopCase)
+            {
+                Console.Clear();
+                Console.WriteLine("The count is: " + theList.Count);
+                Console.WriteLine("The capacity is: " + theList.Capacity);
+                Console.WriteLine("Write +string to add to list and -string to remove");
+                Console.WriteLine("Write e to exit");
+                string input = Console.ReadLine();
+                char nav = input[0];
+                string value = input.Substring(1);
+                switch (nav)
+                {
 
-            //switch(nav){...}
-        }
+                    case '+':
+                        theList.Add(value);
+                        break;
+                    case '-':
+                        theList.Remove(value);
+                        break;
+                    case 'e':
+                        loopCase = false;
+                        break;
+                    default:
+                        Console.WriteLine("Only use + or - to add or remove from list");
+                        break;
+                }
+            } 
+    }
 
         /// <summary>
         /// Examines the datastructure Queue
@@ -94,6 +117,31 @@ namespace ShellProj_Datastructures_Memory
              * Create a switch with cases to enqueue items or dequeue items
              * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
             */
+            Queue<string> theList = new Queue<string>();
+            bool loopCase = true;
+            while (loopCase)
+            {
+                Console.Clear();
+                Console.WriteLine("There is " + theList.Count + " items in que");
+                string input = Console.ReadLine();
+                char nav = input[0];
+                string value = input.Substring(1);
+                switch (nav)
+                {
+
+                    case '1':
+                        theList.Enqueue(value);
+                        break;
+                    case '2':
+                        theList.Dequeue();
+                        break;
+                    case '3':
+                        break;
+                    default:
+                        loopCase = false;
+                        break;
+                }
+            }
         }
 
         /// <summary>

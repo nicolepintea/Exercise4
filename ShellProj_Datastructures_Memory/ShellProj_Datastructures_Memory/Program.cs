@@ -137,8 +137,6 @@ namespace ShellProj_Datastructures_Memory
                         theList.Dequeue();
                         Console.WriteLine("Next in que is: " + theList.Peek());
                         break;
-                    case '3':
-                        break;
                     default:
                         loopCase = false;
                         break;
@@ -156,6 +154,32 @@ namespace ShellProj_Datastructures_Memory
              * Create a switch with cases to push or pop items
              * Make sure to look at the stack after pushing and and poping to see how it behaves
             */
+            Stack<string> theList = new Stack<string>();
+            bool loopCase = true;
+            while (loopCase)
+            {
+                string input = Console.ReadLine();
+                char nav = input[0];
+                string value = input.Substring(1);
+                switch (nav)
+                {
+
+                    case '+':
+                        theList.Push(value);
+                        Console.WriteLine("The next value to pop is: " + theList.Peek());
+                        break;
+                    case '-':
+                        theList.Pop();
+                        Console.WriteLine("The next value to pop is: " + theList.Peek());
+                        break;
+                    case '0':
+                        loopCase = false;
+                        break;
+                    default:
+                        loopCase = false;
+                        break;
+                }
+            }
         }
 
         static void CheckParanthesis()
@@ -165,6 +189,11 @@ namespace ShellProj_Datastructures_Memory
              * Example of correct: (()), {}, [({})]
              * Example of incorrect: (()]), [), {[()}]
              */
+            
+
+
+
+
         }
 
     }

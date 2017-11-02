@@ -81,10 +81,10 @@ namespace ShellProj_Datastructures_Memory
             while (loopCase)
             {
                 Console.Clear();
-                Console.WriteLine("The count is: " + theList.Count);
-                Console.WriteLine("The capacity is: " + theList.Capacity);
+                Console.WriteLine("The count is now: " + theList.Count);
+                Console.WriteLine("The capacity is now: " + theList.Capacity);
                 Console.WriteLine("Write +string to add to list and -string to remove");
-                Console.WriteLine("Write e to exit");
+                Console.WriteLine("Write e to return to the main menu");
                 string input = Console.ReadLine();
                 char nav = input[0];
                 string value = input.Substring(1);
@@ -93,15 +93,19 @@ namespace ShellProj_Datastructures_Memory
 
                     case '+':
                         theList.Add(value);
-                        break;
+                        Console.WriteLine("New element: " + theList + "was added to the List\n");
+                        break;                     
+                                             
                     case '-':
                         theList.Remove(value);
+                        Console.WriteLine("The element: " + theList + "was removed from the List");
                         break;
                     case 'e':
                         loopCase = false;
+                        Console.WriteLine("You riched the main menu");
                         break;
                     default:
-                        Console.WriteLine("Only use + or - to add or remove from list");
+                        Console.WriteLine("Only use +  to add or - to remove from list or e to return to the main menu");
                         break;
                 }
             } 

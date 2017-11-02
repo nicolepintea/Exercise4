@@ -77,12 +77,12 @@ namespace ShellProj_Datastructures_Memory
             */
 
             List<string> theList = new List<string>();
+            Console.WriteLine("\nThe count is now: {0}" , theList.Count);
+            Console.WriteLine("\nThe capacity is now: {0}" + theList.Capacity);
             bool loopCase = true;
             while (loopCase)
             {
                 Console.Clear();
-                Console.WriteLine("The count is now: " + theList.Count);
-                Console.WriteLine("The capacity is now: " + theList.Capacity);
                 Console.WriteLine("Write +string to add to list and -string to remove");
                 Console.WriteLine("Write e to return to the main menu");
                 string input = Console.ReadLine();
@@ -90,11 +90,16 @@ namespace ShellProj_Datastructures_Memory
                 string value = input.Substring(1);
                 switch (nav)
                 {
-
                     case '+':
                         theList.Add(value);
-                        Console.WriteLine("New element: " + theList + "was added to the List\n");
-                        break;                     
+                        foreach (string element in theList)
+                        {
+                            Console.WriteLine("New element: " + element + "was added to the List\n");
+                        }
+                        
+                        break;     
+                   
+                
                                              
                     case '-':
                         theList.Remove(value);
@@ -121,12 +126,12 @@ namespace ShellProj_Datastructures_Memory
              * Create a switch with cases to enqueue items or dequeue items
              * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
             */
-            Queue<string> theList = new Queue<string>();
+            Queue<string> TestOueue = new Queue<string>();
             bool loopCase = true;
             while (loopCase)
             {
                 
-                Console.WriteLine("There is " + theList.Count + " items in que");
+                Console.WriteLine("There is " + TestOueue.Count + " items in que");
                 string input = Console.ReadLine();
                 char nav = input[0];
                 string value = input.Substring(1);
@@ -134,12 +139,12 @@ namespace ShellProj_Datastructures_Memory
                 {
 
                     case '+':
-                        theList.Enqueue(value);
-                        Console.WriteLine("Next in que is: " + theList.Peek());
+                        TestOueue.Enqueue(value);
+                        Console.WriteLine("Next in que is: " + TestOueue.Peek());
                         break;
                     case '-':
-                        theList.Dequeue();
-                        Console.WriteLine("Next in que is: " + theList.Peek());
+                        TestOueue.Dequeue();
+                        Console.WriteLine("Next in que is: " + TestOueue.Peek());
                         break;
                     default:
                         loopCase = false;
